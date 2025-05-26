@@ -18,7 +18,7 @@ This project illustrates the transmission of messages from an ESP32 microcontrol
 
  How It Works
 Transmitter (ESP32):
-Establishes a Wi-Fi network named WifiName1234 with the password 12345678.
+Establishes a Wi-Fi network named WifiName1234 with the password WifiPassword1234.
 Hosts a web server where users can input messages.
 Converts the input message into Morse code.
 Controls the laser diode to emit pulses corresponding to the Morse code.
@@ -37,8 +37,8 @@ Transmitter Setup:
 
 1. Open main.cpp in the Arduino IDE.
 2. Upload the code to the ESP32.
-3. Connect to the Wi-Fi network WifiName1234 using the password "WifiPassword1234".
-4. Access the web server hosted by the ESP32 to input your message.
+3. Connect to the Wi-Fi network WifiName1234 using the password WifiPassword1234.
+4. Access the web server hosted by the ESP32 to input your message (usually the address is "192.168.4.1", if it's not working check the address from the serial monitor).
 
 
 Receiver Setup:
@@ -59,8 +59,3 @@ A schematic diagram illustrating the connections between components will be bene
  Project Structure
 main.cpp: Code for the ESP32 transmitter, including Wi-Fi setup and Morse code transmission.
 MorseDecoderI2C.ino: Code for the receiver to decode Morse code and display messages.
-
-
-
-
-Add support for bi-directional communication.
