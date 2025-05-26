@@ -51,7 +51,8 @@ Receiver Setup:
 Circuit Diagram
 A schematic diagram illustrating the connections between components will be beneficial here.
 
-![image](https://github.com/user-attachments/assets/92e16640-7df8-4f0b-97fb-09074f789f88)
+![image](https://github.com/user-attachments/assets/b526476e-d2fe-48fd-96c9-19cdfefa338e)
+
 ![image](https://github.com/user-attachments/assets/60b440ec-26b8-4d46-9f6e-300f6a448ee1)
 
 
