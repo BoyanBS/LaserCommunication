@@ -1,17 +1,65 @@
-# LaserCommunication
 
-The point of this project is to show how light can be used to transfer information (in this case messages). For the project we are sending a message from an esp32 to an arduino with a laser by Morse code. 
-
-For the project I am using:
-1. One esp32 and one arduino (or two esp32s, in my case I didn't have)
-2. 16X2 I2C LCD display
-3. Photoresistor
-4. Resistor (10 kOhms)
-5. Laser diode
+ LaserCommunication
+A demonstration of optical data transmission using Morse code between two microcontrollers via a laser beam. This project showcases how light can be utilized to transfer information wirelessly.
 
 
-Firsly let's start with the microcontroller that sends the message. The microcontroller must be esp32 because we are using it to create a Wifi network and a server. We need the server because we want to send the messages wirelessly and we need the Wifi for the server IP address.
-After uploading the code we should connect to the newly created wifi called "WifiName1234", the password is "WifiPassword1234" (you can change the name and the password from the 4th and the 5th row in the main.cpp file). Then you should go in your browser to the address "192.168.4.1" from where you can send messages. When you are sending a message from the server, you are sending it to esp, where the message is translated into morse code and after that the dots/dashes are transformed into short/long beams of light through the laser diode.
+ Overview
+This project illustrates the transmission of messages from an ESP32 microcontroller to an Arduino (or another ESP32) using a laser diode. The messages are encoded in Morse code and decoded on the receiving end. The ESP32 also sets up a Wi-Fi network and server to allow users to input messages wirelessly.
 
-The messages are being captured by the photoresistor that is connected to the arduino. After receiving the light signals, the arduino translates them into morse code and then into characters. After that the characters are shown on the LCD display. 
-	
+
+ Components
+1 × ESP32 (transmitter)
+1 × Arduino Uno or second ESP32 (receiver)
+1 × 16×2 I2C LCD display
+1 × Laser diode
+1 × Photoresistor (LDR)
+1 × 10 kΩ resistor
+
+
+ How It Works
+Transmitter (ESP32):
+Establishes a Wi-Fi network named WifiName1234 with the password 12345678.
+Hosts a web server where users can input messages.
+Converts the input message into Morse code.
+Controls the laser diode to emit pulses corresponding to the Morse code.
+Receiver (Arduino or ESP32):
+Uses a photoresistor to detect the laser pulses.
+Decodes the received Morse code into readable text.
+Displays the decoded message on the 16×2 I2C LCD.
+
+
+Prerequisites:
+Arduino IDE installed on your computer.
+
+
+Setup Instructions
+Transmitter Setup:
+
+1. Open main.cpp in the Arduino IDE.
+2. Upload the code to the ESP32.
+3. Connect to the Wi-Fi network WifiName1234 using the password "WifiPassword1234".
+4. Access the web server hosted by the ESP32 to input your message.
+
+
+Receiver Setup:
+1. Open MorseDecoderI2C.ino in the Arduino IDE.
+2. Upload the code to the Arduino or second ESP32.
+3. Ensure the photoresistor is aligned to detect the laser pulses.
+4. Connect the LCD display to the microcontroller.
+
+
+Circuit Diagram
+A schematic diagram illustrating the connections between components will be beneficial here.
+
+![image](https://github.com/user-attachments/assets/92e16640-7df8-4f0b-97fb-09074f789f88)
+![image](https://github.com/user-attachments/assets/60b440ec-26b8-4d46-9f6e-300f6a448ee1)
+
+
+ Project Structure
+main.cpp: Code for the ESP32 transmitter, including Wi-Fi setup and Morse code transmission.
+MorseDecoderI2C.ino: Code for the receiver to decode Morse code and display messages.
+
+
+
+
+Add support for bi-directional communication.
