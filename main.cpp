@@ -1,8 +1,8 @@
 #include <WiFi.h>
 
 // Wi-Fi credentials
-const char* ssid = "KFEKursova";
-const char* password ="Kursova123";
+const char* ssid = "WifiName1234";
+const char* password ="WifiPassword1234";
 
 // Web server
 WiFiServer server(80);
